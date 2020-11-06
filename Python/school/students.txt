@@ -1,0 +1,15 @@
+804253000 Amber Lee 123-321-2332 amberl@psu.edu CMPSC
+907345111 Aswin Leo 323-321-2336 aswinl@psu.edu IST
+707249522 Bob Richard 423-321-2335 bobr@psu.edu CMPSC
+509237433 Richard Samuels 523-321-2334 ric231@psu.edu IST
+480230544 Anwar Mohammed 623-321-2333 anwarm@psu.edu ENGR
+804253555 Jahidul Robin 123-321-2322 jr@psu.edu CMPSC
+907345266 Steve mathew 323-321-2333 sm@psu.edu CMPSC
+707249577 David Fridman 423-321-2355 Df@psu.edu BIO
+509237888 Anthony Mike 523-321-2347 Am@psu.edu BUS
+480230999 Mohammed Junior 623-321-2399 Mj@psu.edu ENGR
+804253101 Mostafa Apu 123-321-2333 Ma@psu.edu IST
+9073452202 Najrul Islam 323-321-2366 Ni@psu.edu IST
+7072495303 Sabrina Ash 423-321-2311 Sa@psu.edu BIO
+5092374644 Mohinur Kilichkulova 523-321-2787 Mk@psu.edu BIO
+4802305815 Ibby Husien 623-321-2345 Ih@psu.edu BUS
