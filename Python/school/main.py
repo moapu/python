@@ -51,11 +51,8 @@ def get_courses(words, courses_num):
 
     return courses
 
-students = get_students_info()
-courses = get_course_info()
-
 def show_student_info(id):
-    for student in students:
+    for student in get_students_info():
         if student['id'] == str(id):
             print('ID:', student['id'])
             print('Name:', student['first_name'], student['last_name'])
@@ -63,7 +60,7 @@ def show_student_info(id):
             print('Email:', student['email'])
             print('Major:', student['major'])
 
-    for student in courses:
+    for student in get_course_info():
         if student['id'] == str(id):
             print('College Year:', student['level'])
 
@@ -77,7 +74,7 @@ def show_student_info(id):
                 print('final:', course['final'])
 
 def show_course_grades(id, course_name):
-    for student in courses:
+    for student in get_course_info():
         if student['id'] == str(id):
             for course in student['courses']:
                 if course['subject'] == course_name:
@@ -87,7 +84,7 @@ def show_course_grades(id, course_name):
                     print('final:', course['final'])
 
 def show_semester_info(id, semester):
-    for student in courses:
+    for student in get_course_info():
         if student['id'] == str(id):
             for course in student['courses']:
                 if course['semester'] == semester:
@@ -99,7 +96,7 @@ def show_semester_info(id, semester):
                     print('final:', course['final'])
 
 def show_max_min_grade(id):
-    for student in courses:
+    for student in get_course_info():
         if student['id'] == str(id):
             for course in student['courses']:
                 grades = [
@@ -159,20 +156,49 @@ def add_student():
             file.write(homework + ' ')
             file.write(final + ' ')
 
-    students = get_students_info()
-    courses = get_course_info()
+def delete_student(id):
+    lines_to_write = []
+
+    for student in get_students_info():
+        if student['id'] == str(id):
+            with open('students.txt', "r+") as file:
+                for line in file:
+                    if str(id) in line:
+                        continue
+                    else:
+                        lines_to_write.append(line)
+
+                file.seek(0)
+                file.writelines(lines_to_write)
+                file.truncate()
+
+    lines_to_write = []
+    for student in get_course_info():
+        if student['id'] == str(id):
+            with open('courses.txt', "r+") as file:
+                for line in file:
+                    if str(id) in line:
+                        continue
+                    else:
+                        lines_to_write.append(line)
+
+                file.seek(0)
+                file.writelines(lines_to_write)
+                file.truncate()
 
 def show_class_year(id):
-    for student in students:
+    for student in get_students_info():
         if student['id'] == str(id):
             print('Name:', student['first_name'], student['last_name'])
-    for student in courses:
+    for student in get_course_info():
         if student['id'] == str(id):
             print('College Year:', student['level'])
 
 
-show_class_year(804253000)
-# show_student_info(804253000)
+
+# delete_student(9073452202)
+# show_class_year(804253000)
+show_student_info(804253000)
 # show_course_grades(804253000, "Math-140")
 # show_semester_info(804253000, "Spring")
 # show_max_min_grade(804253000)
